@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 LABEL maintainer="getvivekv@gmail.com"
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install git apache2 php php-curl php-zip php-mysql php-imap php-mbstring curl libapache2-mod-php php-json cron nano supervisor wget vim
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install git apache2 php php-curl php-zip php-mysql php-imap php-mbstring curl libapache2-mod-php php-json cron nano supervisor wget vim php-redis
 RUN a2enmod rewrite && \
     sed -ie 's/\;date\.timezone\ =/date\.timezone\ =\ America\/New_York/g' /etc/php/7.2/apache2/php.ini && \
     sed -i 's/memory_limit = .*/memory_limit = '1G'/' /etc/php/7.2/apache2/php.ini && \
